@@ -1,14 +1,11 @@
 import { RichTextEditor } from '@mantine/tiptap';
 import { useEditor } from '@tiptap/react';
+import { extensions } from '~/lib/editor';
 import { Content } from './Content';
-import { extensions } from './extensions';
-import styles from './MessageEditor.module.css';
+import styles from './Editor.module.css';
 import { Toolbar } from './Toolbar';
-import type { Message } from './types';
 
-export function MessageEditor(props: { onSubmit: (message: Message) => void }) {
-  const { onSubmit } = props;
-
+export function Editor() {
   const editor = useEditor({
     shouldRerenderOnTransaction: true,
     extensions,
@@ -21,7 +18,7 @@ export function MessageEditor(props: { onSubmit: (message: Message) => void }) {
       classNames={{ content: styles.content }}
     >
       <Toolbar />
-      <Content onSubmit={onSubmit} />
+      <Content />
     </RichTextEditor>
   );
 }

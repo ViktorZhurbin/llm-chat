@@ -1,35 +1,32 @@
+import { id } from '@instantdb/react';
 import { RichTextEditor, useRichTextEditorContext } from '@mantine/tiptap';
-import type { Message } from './types';
+import { db } from '~/lib/db';
+import type { Message } from '~/types/message';
 
-export const Content = (props: { onSubmit: (message: Message) => void }) => {
-  const { onSubmit } = props;
-
+export const Content = () => {
   const { editor } = useRichTextEditorContext();
-
-  const handleSubmit = () => {
-    if (!editor) return;
-
-    const message: Message = {
-      id: Date.now().toString(),
-      content: editor.getJSON(),
-    };
-
-    onSubmit(message);
-
-    editor.commands.setContent('');
-  };
 
   return (
     <RichTextEditor.Content
       onKeyDown={(e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
-          // e.preventDefault();
-          // e.stopPropagation();
+          if (!editor) return;
 
-          console.log('Enter');
-          handleSubmit();
+          addMessage(editor.getJSON());
+
+          editor.commands.setContent('');
         }
       }}
     />
   );
 };
+
+function addMessage(content: Message['content']) {
+  db.transact(
+    db.tx.messages[id()].update({
+      id: id(),
+      content,
+      createdAt: Date.now(),
+    }),
+  );
+}

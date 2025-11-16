@@ -1,7 +1,7 @@
 import { renderToHTMLString } from '@tiptap/static-renderer';
-import { extensions } from './extensions';
+import { extensions } from '~/lib/editor';
+import type { Message } from '~/types/message';
 import styles from './MessageItem.module.css';
-import type { Message } from './types';
 
 export const MessageItem = (props: { message: Message }) => {
   const { message } = props;

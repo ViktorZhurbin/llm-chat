@@ -1,16 +1,29 @@
-import { Container, Stack } from '@mantine/core';
-import { useState } from 'react';
-import { MessageItem } from './editor/MessageItem';
-import { MessageEditor } from './editor/MessageEditor';
-import type { Message } from './editor/types';
+import { Container, Loader, Stack, Typography } from '@mantine/core';
+import { db } from '~/lib/db';
+import { Editor } from './editor/Editor';
 import styles from './MainViewChannel.module.css';
+import { MessageItem } from './messages/MessageItem';
 
 export const MainViewChannel = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const { isLoading, error, data } = db.useQuery({ messages: {} });
 
-  const addMessage = (message: Message) => {
-    setMessages((prev) => [...prev, message]);
-  };
+  if (isLoading) {
+    return (
+      <Container>
+        <Loader />
+      </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Typography style={{ color: 'var(--mantine-color-error)' }}>
+        Error: {error.message}
+      </Typography>
+    );
+  }
+
+  const { messages } = data;
 
   return (
     <Container size="md" fluid className={styles.container}>
@@ -20,7 +33,7 @@ export const MainViewChannel = () => {
         ))}
       </Stack>
 
-      <MessageEditor onSubmit={addMessage} />
+      <Editor />
     </Container>
   );
 };
