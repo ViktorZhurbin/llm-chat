@@ -1,23 +1,19 @@
 import '@mantine/core/styles.css';
+// ‼️ import tiptap styles after core package styles
+import '@mantine/tiptap/styles.css';
+
 import './App.css';
 
-import {
-  Button,
-  createTheme,
-  MantineProvider,
-  Stack,
-  Title,
-} from '@mantine/core';
-import { useState } from 'react';
+import { createTheme, MantineProvider, Stack } from '@mantine/core';
 import { Header } from './components/Header/Header';
+import { MainViewChannel } from './components/MainViewChannel';
 
 const theme = createTheme({
   /** Put your mantine theme override here */
+  defaultRadius: 'md',
 });
 
 export const App = () => {
-  const [count, setCount] = useState(0);
-
   return (
     <MantineProvider theme={theme} defaultColorScheme="auto">
       <div className="root">
@@ -27,11 +23,7 @@ export const App = () => {
 
         <main className="main">
           <Stack h="100%" justify="center" align="center">
-            <Title>Rsbuild + React</Title>
-
-            <Button onClick={() => setCount((count) => count + 1)}>
-              count is {count}
-            </Button>
+            <MainViewChannel />
           </Stack>
         </main>
       </div>
