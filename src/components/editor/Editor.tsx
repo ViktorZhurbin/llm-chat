@@ -1,11 +1,12 @@
-import { RichTextEditor } from '@mantine/tiptap';
+import { RichTextEditor, type RichTextEditorProps } from '@mantine/tiptap';
 import { useEditor } from '@tiptap/react';
 import { extensions } from '~/lib/editor';
 import { Content } from './Content';
-import styles from './Editor.module.css';
 import { Toolbar } from './Toolbar';
 
-export function Editor() {
+export const Editor = (props: {
+  classNames: RichTextEditorProps['classNames'];
+}) => {
   const editor = useEditor({
     shouldRerenderOnTransaction: true,
     extensions,
@@ -15,10 +16,10 @@ export function Editor() {
     <RichTextEditor
       editor={editor}
       variant="subtle"
-      classNames={{ content: styles.content }}
+      classNames={props.classNames}
     >
       <Toolbar />
       <Content />
     </RichTextEditor>
   );
-}
+};
