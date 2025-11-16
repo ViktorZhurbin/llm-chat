@@ -22,5 +22,14 @@ export default defineConfig(({ env }) => {
         localIdentName,
       },
     },
+
+    // performance: {
+    //   chunkSplit: {
+    //     forceSplitting: {
+    //       'lib-mantine': /node_modules[\\/]@mantine/,
+    //       'lib-tiptap': /node_modules[\\/]@tiptap/,
+    //     },
+    //   },
+    // },
   };
 });
