@@ -1,5 +1,5 @@
-import { ActionIcon, Tooltip } from '@mantine/core';
-import type { ActionButtonProps } from '~/types/dom';
+import { ActionIcon, Tooltip } from "@mantine/core";
+import type { ActionButtonProps } from "~/types/dom";
 
 interface IconButtonProps extends ActionButtonProps {
   tooltip?: string;

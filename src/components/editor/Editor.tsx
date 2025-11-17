@@ -1,11 +1,11 @@
-import { RichTextEditor, type RichTextEditorProps } from '@mantine/tiptap';
-import { useEditor } from '@tiptap/react';
-import { extensions } from '~/lib/editor';
-import { Content } from './Content';
-import { Toolbar } from './Toolbar';
+import { RichTextEditor, type RichTextEditorProps } from "@mantine/tiptap";
+import { useEditor } from "@tiptap/react";
+import { extensions } from "~/lib/editor";
+import { Content } from "./Content";
+import { Toolbar } from "./Toolbar";
 
 export const Editor = (props: {
-  classNames: RichTextEditorProps['classNames'];
+  classNames: RichTextEditorProps["classNames"];
 }) => {
   const editor = useEditor({
     shouldRerenderOnTransaction: true,

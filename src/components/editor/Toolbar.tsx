@@ -1,4 +1,4 @@
-import { RichTextEditor } from '@mantine/tiptap';
+import { RichTextEditor } from "@mantine/tiptap";
 
 export const Toolbar = () => {
   return (

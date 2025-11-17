@@ -1,5 +1,5 @@
-import { init } from '@instantdb/react';
-import schema from '../instant.schema';
+import { init } from "@instantdb/react";
+import schema from "../instant.schema";
 
 export const db = init({
   // biome-ignore lint/style/noNonNullAssertion: it's okay :D

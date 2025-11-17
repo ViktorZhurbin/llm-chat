@@ -1,6 +1,6 @@
-import { Container, Loader, Typography } from '@mantine/core';
-import { db } from '~/lib/db';
-import { MessageItem } from './MessageItem';
+import { Container, Loader, Typography } from "@mantine/core";
+import { db } from "~/lib/db";
+import { MessageItem } from "./MessageItem";
 
 export const MessagesList = () => {
   const { isLoading, error, data } = db.useQuery({ messages: {} });
@@ -15,7 +15,7 @@ export const MessagesList = () => {
 
   if (error) {
     return (
-      <Typography style={{ color: 'var(--mantine-color-error)' }}>
+      <Typography style={{ color: "var(--mantine-color-error)" }}>
         Error: {error.message}
       </Typography>
     );

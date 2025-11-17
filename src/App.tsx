@@ -1,16 +1,16 @@
-import '@mantine/core/styles.css';
+import "@mantine/core/styles.css";
 // ‼️ import tiptap styles after core package styles
-import '@mantine/tiptap/styles.css';
+import "@mantine/tiptap/styles.css";
 
-import './App.css';
+import "./App.css";
 
-import { createTheme, MantineProvider, Stack } from '@mantine/core';
-import { Header } from './components/Header/Header';
-import { MainViewChannel } from './components/MainViewChannel';
+import { createTheme, MantineProvider, Stack } from "@mantine/core";
+import { Header } from "./components/Header/Header";
+import { MainViewChannel } from "./components/MainViewChannel";
 
 const theme = createTheme({
   /** Put your mantine theme override here */
-  defaultRadius: 'md',
+  defaultRadius: "md",
 });
 
 export const App = () => {

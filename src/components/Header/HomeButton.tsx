@@ -1,5 +1,5 @@
-import { ActionIcon, Tooltip } from '@mantine/core';
-import { IconHome } from '@tabler/icons-react';
+import { ActionIcon, Tooltip } from "@mantine/core";
+import { IconHome } from "@tabler/icons-react";
 
 export const HomeButton = () => {
   return (

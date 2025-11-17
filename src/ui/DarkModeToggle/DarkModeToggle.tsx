@@ -1,6 +1,6 @@
-import { useMantineColorScheme } from '@mantine/core';
-import { IconButton } from '../IconButton/IconButton';
-import { useNextMode } from './useNextMode';
+import { useMantineColorScheme } from "@mantine/core";
+import { IconButton } from "../IconButton/IconButton";
+import { useNextMode } from "./useNextMode";
 
 export const DarkModeToggle = (props: { tabIndex?: number }) => {
   const { tabIndex } = props;

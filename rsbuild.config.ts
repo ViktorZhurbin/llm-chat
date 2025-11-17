@@ -1,18 +1,18 @@
-import { defineConfig } from '@rsbuild/core';
-import { pluginReact } from '@rsbuild/plugin-react';
-import { pluginTypeCheck } from '@rsbuild/plugin-type-check';
+import { defineConfig } from "@rsbuild/core";
+import { pluginReact } from "@rsbuild/plugin-react";
+import { pluginTypeCheck } from "@rsbuild/plugin-type-check";
 
 export default defineConfig(({ env }) => {
-  const isDev = env === 'development';
+  const isDev = env === "development";
 
   // https://rsbuild.dev/config/output/css-modules#template-string
   const localIdentName = isDev
-    ? '[folder]__[local]-[hash:base64:6]'
-    : '[local]-[hash:base64:6]';
+    ? "[folder]__[local]-[hash:base64:6]"
+    : "[local]-[hash:base64:6]";
 
   return {
     html: {
-      template: './static/index.html',
+      template: "./static/index.html",
     },
 
     plugins: [

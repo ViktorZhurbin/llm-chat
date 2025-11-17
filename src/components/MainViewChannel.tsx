@@ -1,7 +1,7 @@
-import { Container, Stack } from '@mantine/core';
-import { Editor } from './editor/Editor';
-import styles from './MainViewChannel.module.css';
-import { MessagesList } from './messages/MessagesList';
+import { Container, Stack } from "@mantine/core";
+import { Editor } from "./editor/Editor";
+import styles from "./MainViewChannel.module.css";
+import { MessagesList } from "./messages/MessagesList";
 
 export const MainViewChannel = () => {
   return (

@@ -1,5 +1,5 @@
-import { DarkModeToggle } from '~/ui/DarkModeToggle/DarkModeToggle';
-import styles from './Header.module.css';
+import { DarkModeToggle } from "~/ui/DarkModeToggle/DarkModeToggle";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   return (

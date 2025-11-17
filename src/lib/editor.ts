@@ -1,9 +1,9 @@
-import { Link } from '@mantine/tiptap';
+import { Link } from "@mantine/tiptap";
 // import { HardBreak } from '@tiptap/extension-hard-break';
 // import { OrderedList } from '@tiptap/extension-list';
-import Placeholder from '@tiptap/extension-placeholder';
-import { Extension } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
+import Placeholder from "@tiptap/extension-placeholder";
+import { Extension } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
 
 // const CustomHardBreak = HardBreak.extend({
 //   addKeyboardShortcuts() {
@@ -25,7 +25,7 @@ import StarterKit from '@tiptap/starter-kit';
 // });
 
 const CustomEnterBehavior = Extension.create({
-  name: 'customEnterBehavior',
+  name: "customEnterBehavior",
 
   addKeyboardShortcuts() {
     return {
@@ -33,14 +33,14 @@ const CustomEnterBehavior = Extension.create({
       Enter: () => true,
 
       // Or use Shift+Enter for splitting blocks instead
-      'Shift-Enter': () => {
+      "Shift-Enter": () => {
         // console.log('here');
         // console.log(this);
         return this.editor.commands.splitBlock();
       },
 
       // You might want to explicitly handle Mod+Enter differently
-      'Mod-Enter': () => {
+      "Mod-Enter": () => {
         // Your custom behavior here
         return this.editor.commands.splitBlock();
       },
@@ -58,7 +58,7 @@ export const extensions = [
     blockquote: false,
     heading: false,
   }),
-  Placeholder.configure({ placeholder: 'Write a message' }),
+  Placeholder.configure({ placeholder: "Write a message" }),
   Link,
   // CustomHardBreak,
   // CustomOrderedList,
