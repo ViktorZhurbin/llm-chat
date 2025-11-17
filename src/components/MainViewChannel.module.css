@@ -1,22 +1,22 @@
 .container {
-	display: flex;
-	flex-direction: column;
-	gap: var(--mantine-spacing-md);
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin-inline: auto;
-	max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-md);
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin-inline: auto;
+  max-width: 48rem;
 }
 
 .messages {
-	height: 100%;
-	flex-grow: 1;
-	justify-content: flex-end;
-	gap: var(--mantine-spacing-sm);
+  height: 100%;
+  flex-grow: 1;
+  justify-content: flex-end;
+  gap: var(--mantine-spacing-sm);
 }
 
 .editorContent {
-	max-height: 60dvh;
-	overflow: auto;
+  max-height: 60dvh;
+  overflow: auto;
 }
