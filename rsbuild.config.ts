@@ -15,7 +15,10 @@ export default defineConfig(({ env }) => {
       template: './static/index.html',
     },
 
-    plugins: [pluginReact(), pluginTypeCheck()],
+    plugins: [
+      pluginReact(),
+      pluginTypeCheck({ tsCheckerOptions: { devServer: false } }),
+    ],
 
     output: {
       cssModules: {
