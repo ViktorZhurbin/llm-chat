@@ -4,10 +4,6 @@ import { pluginTypeCheck } from "@rsbuild/plugin-type-check";
 
 export default defineConfig(() => {
 	return {
-		html: {
-			template: "./static/index.html",
-		},
-
 		plugins: [
 			pluginReact(),
 			pluginTypeCheck({ tsCheckerOptions: { devServer: false } }),

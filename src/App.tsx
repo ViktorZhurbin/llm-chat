@@ -16,6 +16,8 @@ const theme = createTheme({
 export const App = () => {
 	return (
 		<MantineProvider theme={theme} defaultColorScheme="auto">
+			<title>Chat</title>
+
 			<div className="root">
 				<header className="header">
 					<Header />
