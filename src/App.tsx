@@ -4,14 +4,10 @@ import "@mantine/tiptap/styles.css";
 
 import "./App.css";
 
-import { createTheme, MantineProvider, Stack } from "@mantine/core";
+import { MantineProvider, Stack } from "@mantine/core";
 import { Header } from "./components/Header/Header";
 import { MainViewChannel } from "./components/MainViewChannel";
-
-const theme = createTheme({
-	/** Put your mantine theme override here */
-	defaultRadius: "md",
-});
+import { theme } from "./lib/theme";
 
 export const App = () => {
 	return (
