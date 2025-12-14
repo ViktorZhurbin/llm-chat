@@ -12,9 +12,9 @@
   "dependencies": {
     "@instantdb/admin": "^0.22.51",
     "@instantdb/react": "^0.22.51",
-    "@mantine/core": "^8.3.8",
-    "@mantine/hooks": "^8.3.8",
-    "@mantine/tiptap": "^8.3.8",
+    "@mantine/core": "^8.3.10",
+    "@mantine/hooks": "^8.3.10",
+    "@mantine/tiptap": "^8.3.10",
     "@tabler/icons-react": "^3.35.0",
     "@tiptap/extension-link": "^3.10.7",
     "@tiptap/extension-placeholder": "^3.10.7",
