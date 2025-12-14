@@ -18,6 +18,11 @@ const _schema = i.schema({
 			content: i.json(),
 			createdAt: i.number(),
 		}),
+		docs: i.entity({
+			id: i.string(),
+			content: i.json(),
+			createdAt: i.number(),
+		}),
 	},
 	links: {
 		$usersLinkedPrimaryUser: {

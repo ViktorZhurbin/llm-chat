@@ -10,11 +10,15 @@
 		"format": "biome format --write"
 	},
 	"dependencies": {
+		"@blocknote/core": "^0.44.2",
+		"@blocknote/mantine": "^0.44.2",
+		"@blocknote/react": "^0.44.2",
 		"@instantdb/admin": "^0.22.87",
 		"@instantdb/react": "^0.22.87",
 		"@mantine/core": "^8.3.10",
 		"@mantine/hooks": "^8.3.10",
 		"@mantine/tiptap": "^8.3.10",
+		"@mantine/utils": "^6.0.22",
 		"@tabler/icons-react": "^3.35.0",
 		"@tiptap/extension-link": "^3.13.0",
 		"@tiptap/extension-placeholder": "^3.13.0",

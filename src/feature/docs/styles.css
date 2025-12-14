@@ -1,0 +1,9 @@
+.bn-container,
+.bn-editor {
+	width: 100%;
+	height: 100%;
+}
+
+.bn-editor {
+	padding-block: 16px;
+}
