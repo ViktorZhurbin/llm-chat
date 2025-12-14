@@ -1,3 +1,5 @@
+import "@mantine/tiptap/styles.css";
+
 import { Container, Stack } from "@mantine/core";
 import { Editor } from "./editor/Editor";
 import styles from "./MainViewChannel.module.css";

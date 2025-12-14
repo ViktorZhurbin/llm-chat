@@ -1,12 +1,10 @@
 import "@mantine/core/styles.css";
-// ‼️ import tiptap styles after core package styles
-import "@mantine/tiptap/styles.css";
 
 import "./App.css";
 
 import { MantineProvider, Stack } from "@mantine/core";
-import { Header } from "./components/Header/Header";
-import { MainViewChannel } from "./components/MainViewChannel";
+import { Header } from "./blocks/Header/Header";
+import { MainViewChannel } from "./feature/chat/MainViewChannel";
 import { theme } from "./lib/theme";
 
 export const App = () => {
