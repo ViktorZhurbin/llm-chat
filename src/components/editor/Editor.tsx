@@ -5,21 +5,21 @@ import { Content } from "./Content";
 import { Toolbar } from "./Toolbar";
 
 export const Editor = (props: {
-  classNames: RichTextEditorProps["classNames"];
+	classNames: RichTextEditorProps["classNames"];
 }) => {
-  const editor = useEditor({
-    shouldRerenderOnTransaction: true,
-    extensions,
-  });
+	const editor = useEditor({
+		shouldRerenderOnTransaction: true,
+		extensions,
+	});
 
-  return (
-    <RichTextEditor
-      editor={editor}
-      variant="subtle"
-      classNames={props.classNames}
-    >
-      <Toolbar />
-      <Content />
-    </RichTextEditor>
-  );
+	return (
+		<RichTextEditor
+			editor={editor}
+			variant="subtle"
+			classNames={props.classNames}
+		>
+			<Toolbar />
+			<Content />
+		</RichTextEditor>
+	);
 };

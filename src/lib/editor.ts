@@ -25,42 +25,42 @@ import StarterKit from "@tiptap/starter-kit";
 // });
 
 const CustomEnterBehavior = Extension.create({
-  name: "customEnterBehavior",
+	name: "customEnterBehavior",
 
-  addKeyboardShortcuts() {
-    return {
-      // Override the default Enter key behavior
-      Enter: () => true,
+	addKeyboardShortcuts() {
+		return {
+			// Override the default Enter key behavior
+			Enter: () => true,
 
-      // Or use Shift+Enter for splitting blocks instead
-      "Shift-Enter": () => {
-        // console.log('here');
-        // console.log(this);
-        return this.editor.commands.splitBlock();
-      },
+			// Or use Shift+Enter for splitting blocks instead
+			"Shift-Enter": () => {
+				// console.log('here');
+				// console.log(this);
+				return this.editor.commands.splitBlock();
+			},
 
-      // You might want to explicitly handle Mod+Enter differently
-      "Mod-Enter": () => {
-        // Your custom behavior here
-        return this.editor.commands.splitBlock();
-      },
-    };
-  },
+			// You might want to explicitly handle Mod+Enter differently
+			"Mod-Enter": () => {
+				// Your custom behavior here
+				return this.editor.commands.splitBlock();
+			},
+		};
+	},
 });
 
 export const extensions = [
-  StarterKit.configure({
-    link: false,
+	StarterKit.configure({
+		link: false,
 
-    hardBreak: false,
-    orderedList: false,
-    bulletList: false,
-    blockquote: false,
-    heading: false,
-  }),
-  Placeholder.configure({ placeholder: "Write a message" }),
-  Link,
-  // CustomHardBreak,
-  // CustomOrderedList,
-  CustomEnterBehavior,
+		hardBreak: false,
+		orderedList: false,
+		bulletList: false,
+		blockquote: false,
+		heading: false,
+	}),
+	Placeholder.configure({ placeholder: "Write a message" }),
+	Link,
+	// CustomHardBreak,
+	// CustomOrderedList,
+	CustomEnterBehavior,
 ];

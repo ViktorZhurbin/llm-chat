@@ -1,17 +1,17 @@
 import { RichTextEditor } from "@mantine/tiptap";
 
 export const Toolbar = () => {
-  return (
-    <RichTextEditor.Toolbar>
-      <RichTextEditor.ControlsGroup>
-        <RichTextEditor.Bold />
-        <RichTextEditor.Italic />
-        <RichTextEditor.Underline />
-        <RichTextEditor.Strikethrough />
-        <RichTextEditor.ClearFormatting />
-      </RichTextEditor.ControlsGroup>
+	return (
+		<RichTextEditor.Toolbar>
+			<RichTextEditor.ControlsGroup>
+				<RichTextEditor.Bold />
+				<RichTextEditor.Italic />
+				<RichTextEditor.Underline />
+				<RichTextEditor.Strikethrough />
+				<RichTextEditor.ClearFormatting />
+			</RichTextEditor.ControlsGroup>
 
-      {/* <RichTextEditor.ControlsGroup>
+			{/* <RichTextEditor.ControlsGroup>
         <RichTextEditor.H1 />
         <RichTextEditor.H2 />
         <RichTextEditor.H3 />
@@ -30,10 +30,10 @@ export const Toolbar = () => {
         <RichTextEditor.Unlink />
       </RichTextEditor.ControlsGroup> */}
 
-      <RichTextEditor.ControlsGroup>
-        <RichTextEditor.Undo />
-        <RichTextEditor.Redo />
-      </RichTextEditor.ControlsGroup>
-    </RichTextEditor.Toolbar>
-  );
+			<RichTextEditor.ControlsGroup>
+				<RichTextEditor.Undo />
+				<RichTextEditor.Redo />
+			</RichTextEditor.ControlsGroup>
+		</RichTextEditor.Toolbar>
+	);
 };

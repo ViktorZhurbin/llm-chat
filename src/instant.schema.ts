@@ -3,42 +3,42 @@
 import { i } from "@instantdb/react";
 
 const _schema = i.schema({
-  entities: {
-    $files: i.entity({
-      path: i.string().unique().indexed(),
-      url: i.string(),
-    }),
-    $users: i.entity({
-      email: i.string().unique().indexed().optional(),
-      imageURL: i.string().optional(),
-      type: i.string().optional(),
-    }),
-    messages: i.entity({
-      id: i.string(),
-      content: i.json(),
-      createdAt: i.number(),
-    }),
-  },
-  links: {
-    $usersLinkedPrimaryUser: {
-      forward: {
-        on: "$users",
-        has: "one",
-        label: "linkedPrimaryUser",
-        onDelete: "cascade",
-      },
-      reverse: {
-        on: "$users",
-        has: "many",
-        label: "linkedGuestUsers",
-      },
-    },
-  },
-  rooms: {
-    chats: {
-      presence: i.entity({}),
-    },
-  },
+	entities: {
+		$files: i.entity({
+			path: i.string().unique().indexed(),
+			url: i.string(),
+		}),
+		$users: i.entity({
+			email: i.string().unique().indexed().optional(),
+			imageURL: i.string().optional(),
+			type: i.string().optional(),
+		}),
+		messages: i.entity({
+			id: i.string(),
+			content: i.json(),
+			createdAt: i.number(),
+		}),
+	},
+	links: {
+		$usersLinkedPrimaryUser: {
+			forward: {
+				on: "$users",
+				has: "one",
+				label: "linkedPrimaryUser",
+				onDelete: "cascade",
+			},
+			reverse: {
+				on: "$users",
+				has: "many",
+				label: "linkedGuestUsers",
+			},
+		},
+	},
+	rooms: {
+		chats: {
+			presence: i.entity({}),
+		},
+	},
 });
 
 // This helps Typescript display nicer intellisense

@@ -3,23 +3,23 @@ import { pluginReact } from "@rsbuild/plugin-react";
 import { pluginTypeCheck } from "@rsbuild/plugin-type-check";
 
 export default defineConfig(() => {
-  return {
-    html: {
-      template: "./static/index.html",
-    },
+	return {
+		html: {
+			template: "./static/index.html",
+		},
 
-    plugins: [
-      pluginReact(),
-      pluginTypeCheck({ tsCheckerOptions: { devServer: false } }),
-    ],
+		plugins: [
+			pluginReact(),
+			pluginTypeCheck({ tsCheckerOptions: { devServer: false } }),
+		],
 
-    // performance: {
-    //   chunkSplit: {
-    //     forceSplitting: {
-    //       'lib-mantine': /node_modules[\\/]@mantine/,
-    //       'lib-tiptap': /node_modules[\\/]@tiptap/,
-    //     },
-    //   },
-    // },
-  };
+		// performance: {
+		//   chunkSplit: {
+		//     forceSplitting: {
+		//       'lib-mantine': /node_modules[\\/]@mantine/,
+		//       'lib-tiptap': /node_modules[\\/]@tiptap/,
+		//     },
+		//   },
+		// },
+	};
 });
