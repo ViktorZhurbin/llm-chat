@@ -5,7 +5,7 @@ import { MantineProvider, Stack } from "@mantine/core";
 import { useState } from "react";
 import { Header } from "./blocks/Header/Header";
 import { MainViewChannel } from "./feature/chat/MainViewChannel";
-import { Docs } from "./feature/docs/Docs";
+import { DocsList } from "./feature/docs/DocsList";
 import { theme } from "./lib/theme";
 
 export const App = () => {
@@ -22,7 +22,9 @@ export const App = () => {
 
 				<main className="main">
 					{view === "docs" ? (
-						<Docs />
+						<Stack h="100%">
+							<DocsList />
+						</Stack>
 					) : (
 						<Stack h="100%" justify="center" align="center">
 							<MainViewChannel />
