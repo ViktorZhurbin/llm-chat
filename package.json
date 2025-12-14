@@ -10,8 +10,8 @@
     "format": "biome format --write"
   },
   "dependencies": {
-    "@instantdb/admin": "^0.22.51",
-    "@instantdb/react": "^0.22.51",
+    "@instantdb/admin": "^0.22.87",
+    "@instantdb/react": "^0.22.87",
     "@mantine/core": "^8.3.10",
     "@mantine/hooks": "^8.3.10",
     "@mantine/tiptap": "^8.3.10",
