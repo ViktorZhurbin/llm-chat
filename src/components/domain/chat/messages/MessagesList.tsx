@@ -1,4 +1,5 @@
-import { Container, Loader, Typography } from "@mantine/core";
+import { CenteredError } from "~/components/layout/CenteredError";
+import { CenteredLoader } from "~/components/layout/CenteredLoader";
 import { db } from "~/lib/db";
 import { MessageItem } from "./MessageItem";
 
@@ -6,19 +7,11 @@ export const MessagesList = () => {
 	const { isLoading, error, data } = db.useQuery({ messages: {} });
 
 	if (isLoading) {
-		return (
-			<Container>
-				<Loader />
-			</Container>
-		);
+		return <CenteredLoader />;
 	}
 
 	if (error) {
-		return (
-			<Typography style={{ color: "var(--mantine-color-error)" }}>
-				Error: {error.message}
-			</Typography>
-		);
+		return <CenteredError message={"error.message"} />;
 	}
 
 	const { messages } = data;

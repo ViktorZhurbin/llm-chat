@@ -1,24 +1,18 @@
-import { Container, Group, Loader, Stack, Typography } from "@mantine/core";
+import { Group, Stack } from "@mantine/core";
 import { DocsListItem } from "~/components/domain/docs/DocsListItem";
+import { CenteredError } from "~/components/layout/CenteredError";
+import { CenteredLoader } from "~/components/layout/CenteredLoader";
 import { db } from "~/lib/db";
 
 export const DocsHome = () => {
 	const { isLoading, error, data } = db.useQuery({ docs: {} });
 
 	if (isLoading) {
-		return (
-			<Container>
-				<Loader />
-			</Container>
-		);
+		return <CenteredLoader />;
 	}
 
 	if (error) {
-		return (
-			<Typography style={{ color: "var(--mantine-color-error)" }}>
-				Error: {error.message}
-			</Typography>
-		);
+		return <CenteredError message={error.message} />;
 	}
 
 	const { docs } = data;

@@ -1,6 +1,7 @@
-import { Container, Loader, Typography } from "@mantine/core";
 import { useParams } from "wouter";
 import { DocEditor } from "~/components/domain/docs/DocEditor";
+import { CenteredError } from "~/components/layout/CenteredError";
+import { CenteredLoader } from "~/components/layout/CenteredLoader";
 import { db } from "~/lib/db";
 import type { DocPathParams } from "~/lib/routes";
 
@@ -14,19 +15,11 @@ export const Doc = () => {
 	});
 
 	if (isLoading) {
-		return (
-			<Container>
-				<Loader />
-			</Container>
-		);
+		return <CenteredLoader />;
 	}
 
 	if (error) {
-		return (
-			<Typography style={{ color: "var(--mantine-color-error)" }}>
-				Error: {error.message}
-			</Typography>
-		);
+		return <CenteredError message={error.message} />;
 	}
 
 	return <DocEditor doc={data.docs[0]} />;
