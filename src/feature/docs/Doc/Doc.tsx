@@ -2,32 +2,28 @@ import "@blocknote/core/fonts/inter.css";
 import "@blocknote/mantine/blocknoteStyles.css";
 import "./styles.css";
 
+import type { Block } from "@blocknote/core";
 import { BlockNoteView } from "@blocknote/mantine";
 import { useCreateBlockNote, useEditorChange } from "@blocknote/react";
-import { id } from "@instantdb/react";
 import { useComputedColorScheme } from "@mantine/core";
-import { db } from "~/lib/db";
-import type { Doc } from "~/types/doc";
+import { DocsApi } from "~/api/docs";
+import type { DocType } from "~/types/doc";
 
-export const Docs = () => {
-	const editor = useCreateBlockNote();
+export const Doc = (props: { doc: DocType }) => {
+	const { doc } = props;
+
+	// biome-ignore lint/suspicious/noExplicitAny: all good
+	const initialContent = JSON.parse(doc.content) as Block<any, any, any>[];
+
+	const editor = useCreateBlockNote({ initialContent });
 	const computedColorScheme = useComputedColorScheme();
 
 	useEditorChange((editor) => {
 		// The current document content as a string
 		const savedBlocks = JSON.stringify(editor.document);
-		addDoc(savedBlocks);
+
+		DocsApi.updateField({ id: doc.id, payload: savedBlocks });
 	}, editor);
 
 	return <BlockNoteView editor={editor} theme={computedColorScheme} />;
 };
-
-function addDoc(content: Doc["content"]) {
-	db.transact(
-		db.tx.docs[id()].update({
-			id: id(),
-			content,
-			createdAt: Date.now(),
-		}),
-	);
-}

@@ -1,24 +1,28 @@
 import { NavLink } from "@mantine/core";
+import { Link, useRoute } from "wouter";
+import { Routes } from "~/constants/routes";
 import { DarkModeToggle } from "~/ui/DarkModeToggle/DarkModeToggle";
 import styles from "./Header.module.css";
 
-export const Header = (props: {
-	view: "chat" | "docs";
-	setView: (view: "chat" | "docs") => void;
-}) => {
+export const Header = () => {
+	const [isChat] = useRoute(Routes.CHAT);
+	const [isDocs] = useRoute(`${Routes.DOCS_HOME}/*?`);
+
 	return (
 		<div className={styles.root}>
 			<div className={styles.innerWrapper}>
 				<NavLink
-					active={props.view === "docs"}
-					onClick={() => props.setView("docs")}
 					label="Docs"
+					component={Link}
+					href={Routes.DOCS_HOME}
+					active={isDocs}
 				/>
 
 				<NavLink
-					active={props.view === "chat"}
-					onClick={() => props.setView("chat")}
 					label="Chat"
+					href={Routes.CHAT}
+					component={Link}
+					active={isChat}
 				/>
 			</div>
 

@@ -1,8 +1,8 @@
-import { Container, Group, Loader, Typography } from "@mantine/core";
+import { Container, Group, Loader, Stack, Typography } from "@mantine/core";
+import { DocsListItem } from "~/feature/docs/DocsListItem";
 import { db } from "~/lib/db";
-import { DocsListItem } from "./DocsListItem";
 
-export const DocsList = () => {
+export const DocsHome = () => {
 	const { isLoading, error, data } = db.useQuery({ docs: {} });
 
 	if (isLoading) {
@@ -24,10 +24,12 @@ export const DocsList = () => {
 	const { docs } = data;
 
 	return (
-		<Group gap={8}>
-			{docs.map((doc) => (
-				<DocsListItem key={doc.id} doc={doc} />
-			))}
-		</Group>
+		<Stack h="100%">
+			<Group gap={8}>
+				{docs.map((doc) => (
+					<DocsListItem key={doc.id} doc={doc} />
+				))}
+			</Group>
+		</Stack>
 	);
 };
