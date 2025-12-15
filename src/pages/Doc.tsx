@@ -1,10 +1,10 @@
 import { Container, Loader, Typography } from "@mantine/core";
 import { useParams } from "wouter";
+import { DocEditor } from "~/components/domain/docs/DocEditor";
 import { db } from "~/lib/db";
 import type { DocPathParams } from "~/lib/routes";
-import { Doc } from "./Doc/Doc";
 
-export const DocProvider = () => {
+export const Doc = () => {
 	const { id } = useParams<DocPathParams>();
 
 	const { data, isLoading, error } = db.useQuery({
@@ -29,5 +29,5 @@ export const DocProvider = () => {
 		);
 	}
 
-	return <Doc doc={data.docs[0]} />;
+	return <DocEditor doc={data.docs[0]} />;
 };

@@ -1,5 +1,5 @@
 import { Container, Group, Loader, Stack, Typography } from "@mantine/core";
-import { DocsListItem } from "~/feature/docs/DocsListItem";
+import { DocsListItem } from "~/components/domain/docs/DocsListItem";
 import { db } from "~/lib/db";
 
 export const DocsHome = () => {

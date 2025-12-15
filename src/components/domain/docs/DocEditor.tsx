@@ -1,6 +1,6 @@
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/mantine/blocknoteStyles.css";
-import "./styles.css";
+import "./DocEditor.css";
 
 import type { Block } from "@blocknote/core";
 import { BlockNoteView } from "@blocknote/mantine";
@@ -9,7 +9,7 @@ import { useComputedColorScheme } from "@mantine/core";
 import { DocsApi } from "~/api/docs";
 import type { DocType } from "~/types/doc";
 
-export const Doc = (props: { doc: DocType }) => {
+export const DocEditor = (props: { doc: DocType }) => {
 	const { doc } = props;
 
 	// biome-ignore lint/suspicious/noExplicitAny: all good

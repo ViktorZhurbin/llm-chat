@@ -1,7 +1,7 @@
 import { NavLink } from "@mantine/core";
 import { Link, useRoute } from "wouter";
+import { DarkModeToggle } from "~/components/common/DarkModeToggle/DarkModeToggle";
 import { Routes } from "~/constants/routes";
-import { DarkModeToggle } from "~/ui/DarkModeToggle/DarkModeToggle";
 import styles from "./Header.module.css";
 
 export const Header = () => {
